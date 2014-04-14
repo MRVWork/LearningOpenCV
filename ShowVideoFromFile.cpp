@@ -6,7 +6,7 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-    VideoCapture cap("C:/Users/SHERMAL/Desktop/SampleVideo.avi"); // open the video file for reading
+    VideoCapture cap("../samples/c/tree.avi"); // open the video file for reading
 
     if ( !cap.isOpened() )  // if not success, exit program
     {
@@ -36,7 +36,7 @@ int main(int argc, char* argv[])
 
         imshow("MyVideo", frame); //show the frame in "MyVideo" window
 
-        if(waitKey(30) == 27) //wait for 'esc' key press for 30 ms. If 'esc' key is pressed, break loop
+        if(waitKey(30) == 1) //wait for 'esc' key press for 30 ms. If 'esc' key is pressed, break loop
        {
                 cout << "esc key is pressed by user" << endl; 
                 break; 
