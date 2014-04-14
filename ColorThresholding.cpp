@@ -6,7 +6,21 @@
 int main()
 {
 //Image variables
-IplImage* img=cvLoadImage("F:\\t4.jpg");
+	CvCapture* capture = 0;
+
+	capture = cvCaptureFromCAM(0);
+
+	if(!capture)
+	{
+		return -1;
+	}	
+
+
+	IplImage *frame=0;
+	IplImage *img=cvCreateImage(cvSize(w, h), 8, 3);
+	frame = cvQueryFrame(capture);
+	cvResize(frame, img, CV_INTER_LINEAR);
+
 IplImage* rimg=cvCreateImage(cvSize(w,h),8,3);
 IplImage* hsvimg=cvCreateImage(cvSize(w,h),8,3);
 IplImage* thresh=cvCreateImage(cvSize(w,h),8,1);
@@ -30,12 +44,15 @@ cvCreateTrackbar("V2","cnt",&v2,255,0);
 cvResize(img,rimg,CV_INTER_LINEAR);
 //Changing into HSV plane
 cvCvtColor(rimg,hsvimg,CV_BGR2HSV);
+cvShowImage("Original Image",img);
+cvWaitKey(1);
+
+return 0;
 while(1)
 {
 //Thresholding the image
 cvInRangeS(hsvimg,cvScalar(h1,s1,v1),cvScalar(h2,s2,v2),thresh);
 //Showing the images
-cvShowImage("Original Image",rimg);
 cvShowImage("Thresholded Image",thresh);
 //Escape Sequence
 char c=cvWaitKey(33);
