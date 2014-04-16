@@ -1,0 +1,17 @@
+/* MRV's Scratchpad */
+
+int main(int, char**)
+{
+cv::VideoCapture capLeft(0); // open the Left camera
+capLeft.set(CV_CAP_PROP_FRAME_WIDTH, 320);
+capLeft.set(CV_CAP_PROP_FRAME_HEIGHT, 240);
+
+cv::VideoCapture capRight(1); // open the Right camera
+capRight.set(CV_CAP_PROP_FRAME_WIDTH, 320);
+capRight.set(CV_CAP_PROP_FRAME_HEIGHT, 240);
+if(!capLeft.isOpened() || !capRight.isOpened()) // check if we succeeded
+{
+std::cerr << "ERROR: Could not open cameras." << std::endl;
+return -1;
+}
+///////////////////////////////////////////////////////////////////////////////////
