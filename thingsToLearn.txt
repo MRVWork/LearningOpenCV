@@ -1,0 +1,8 @@
+1. Feature vectors for shapes/face/thumb-impression/characters/phonemes/spoken-words/iris
+2. Extracting the feature vectors from training data
+3. Feature matching algorithms
+4. SIFT (Scale Invariant Feature Transform) 
+5. Improving contrast of a color image in opencv
+6. Depth estimation in stereoscopic system
+7. Different types of actuators/sensors
+8. 
