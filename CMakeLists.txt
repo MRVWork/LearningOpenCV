@@ -1,6 +1,18 @@
 cmake_minimum_required(VERSION 2.8)
 find_package(OpenCV REQUIRED)
 
+project(LiveCanny)
+add_executable(LiveCanny LiveCanny.cpp)
+target_link_libraries(LiveCanny ${OpenCV_LIBS})
+
+project(LiveDetectShapes)
+add_executable(LiveDetectShapes LiveDetectShapes.cpp)
+target_link_libraries(LiveDetectShapes ${OpenCV_LIBS})
+
+project (detectSimpleShapes)
+add_executable(detectSimpleShapes detectSimpleShapes.cpp )
+target_link_libraries(detectSimpleShapes ${OpenCV_LIBS})
+
 project (Live)
 add_executable (Live Live.cpp )
 target_link_libraries( Live ${OpenCV_LIBS})
